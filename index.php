@@ -82,7 +82,7 @@
                         <li><a href="index.php?module=home" title="Home" <?php if ($module == 'home'){echo 'class="active"';}?>>Home</a></li>
                         <li><a href="index.php?module=game" title="Games" <?php if ($module == 'game'){echo 'class="active"';}?>>Games</a></li>
                         <li><a href="index.php?module=team" title="Teams" <?php if ($module == 'team'){echo 'class="active"';}?>>Teams</a></li>
-                        <li><a href="index.php?module=tournament" title="Tournaments" <?php if ($module == 'tournament'){echo 'class="active"';}?>>Tournaments</a></li>
+                        <li><a href="index.php?module=turnyras" title="Tournaments" <?php if ($module == 'turnyras'){echo 'class="active"';}?>>Tournaments</a></li>
                         <li><a href="index.php?module=report" title="Reports" <?php if ($module == 'game'){echo 'class="active"';}?>>Reports</a></li>
                     </ul>
                     <form class="navbar-form navbar-right">
@@ -122,7 +122,6 @@
             </div>
 
             <div class="container col-md-10 well">
-                <p>Test text</p>
                 <?php
                 if(!empty($module)) {
                     if(empty($id) && empty($action)) {

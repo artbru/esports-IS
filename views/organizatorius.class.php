@@ -31,7 +31,7 @@ class org {
 	}
 	public function getOrgListCount() {
 		$query = "  SELECT COUNT(`organizatorius`.`id`) as `kiekis`
-					FROM `organizatorius`"
+					FROM `organizatorius`";
 		$data = mysql::select($query);
 		return $data[0]['kiekis'];
 	}

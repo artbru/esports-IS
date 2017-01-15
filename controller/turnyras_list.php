@@ -1,4 +1,4 @@
-<? php
+<?php
 	include 'views/turnyras.class.php';
 	$modelsObj = new turnyras();
 	

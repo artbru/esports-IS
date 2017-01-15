@@ -37,7 +37,7 @@ class turnyras {
 	}
 	public function getTurnyrasListCount() {
 		$query = "  SELECT COUNT(`turnyras`.`id`) as `kiekis`
-					FROM `turnyras`"
+					FROM `turnyras`";
 		$data = mysql::select($query);
 		return $data[0]['kiekis'];
 	}

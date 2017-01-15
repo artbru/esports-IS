@@ -31,7 +31,7 @@ class zaidimas {
 	}
 	public function getZaidimasListCount() {
 		$query = "  SELECT COUNT(`zaidimas`.`id`) as `kiekis`
-					FROM `zaidimas`"
+					FROM `zaidimas`";
 		$data = mysql::select($query);
 		return $data[0]['kiekis'];
 	}

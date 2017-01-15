@@ -53,7 +53,7 @@ class dalyvis {
 	}
 	public function getDalyvisListCount() {
 		$query = "  SELECT COUNT(`dalyvis`.`turnyro_id`) as `kiekis`
-					FROM `dalyvis`"
+					FROM `dalyvis`";
 		$data = mysql::select($query);
 		return $data[0]['kiekis'];
 	}
