@@ -44,7 +44,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta name="robots" content="noindex">
-		<title>eSports IS</title>
+		<title>eSports</title>
 		<link rel="stylesheet" type="text/css" href="scripts/datetimepicker/jquery.datetimepicker.css" media="screen" />
         <script type="text/javascript" src="scripts/jquery-1.12.0.min.js"></script>
 		<script type="text/javascript" src="scripts/datetimepicker/jquery.datetimepicker.full.min.js"></script>
@@ -73,27 +73,27 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Brand</a>
+                    <a class="navbar-brand" href="#">eSports</a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li><a href="index.php?module=home" title="Home" <?php if ($module == 'home'){echo 'class="active"';}?>>Home</a></li>
-                        <li><a href="index.php?module=game" title="Games" <?php if ($module == 'game'){echo 'class="active"';}?>>Games</a></li>
-                        <li><a href="index.php?module=team" title="Teams" <?php if ($module == 'team'){echo 'class="active"';}?>>Teams</a></li>
-                        <li><a href="index.php?module=turnyras" title="Tournaments" <?php if ($module == 'turnyras'){echo 'class="active"';}?>>Tournaments</a></li>
-                        <li><a href="index.php?module=report" title="Reports" <?php if ($module == 'game'){echo 'class="active"';}?>>Reports</a></li>
+                        <li><a href="index.php?module=pagrindinis" title="Pagrindinis" <?php if ($module == 'pagrindins'){echo 'class="active"';}?>>Pagrindinis</a></li>
+                        <li><a href="index.php?module=zaidimas" title="Žaidimai" <?php if ($module == 'zaidimas'){echo 'class="active"';}?>>Žaidimai</a></li>
+                        <li><a href="index.php?module=komanda" title="Komandos" <?php if ($module == 'komanda'){echo 'class="active"';}?>>Komandos</a></li>
+                        <li><a href="index.php?module=turnyras" title="Turnyrai" <?php if ($module == 'turnyras'){echo 'class="active"';}?>>Turnyrai</a></li>
+                        <li><a href="index.php?module=ataskaita" title="Ataskaitos" <?php if ($module == 'ataskaita'){echo 'class="active"';}?>>Ataskaitos</a></li>
                     </ul>
                     <form class="navbar-form navbar-right">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Username">
+                            <input type="text" class="form-control" placeholder="Slapyvardis">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Password">
+                            <input type="text" class="form-control" placeholder="Slaptažodis">
                         </div>
-                        <button type="submit" class="btn btn-primary">Login</button>
-                        <button type="button" class="btn btn-info">Register</button>
+                        <button type="submit" class="btn btn-primary">Prisijungti</button>
+                        <button type="button" class="btn btn-info">Registruotis</button>
                         <div class="row">
                             <!--<div class="form-group">
                                 <div class="checkbox col-md-8">
@@ -103,7 +103,7 @@
                                 </div>
                             </div>-->
                             <div class="col-md-4 col-md-offset-8">
-                                <a href="#">Forgot password?</a>
+                                <a href="#">Pamiršote slaptažodį?</a>
                             </div>
                         </div>
                     </form>
