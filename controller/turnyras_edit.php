@@ -9,7 +9,7 @@
 	$formErrors = null;
 	$fields = array();
 	
-	$required = array('pavadinimas', 'sporto_saka', 'miestas','salis','prizinis_fondas','pradzia','pabaiga');
+	$required = array('pavadinimas', 'sporto_saka', 'miestas','salis','prizinis_fondas','pradzia','pabaiga','organizatorius');
 	if(!empty($_POST['submit'])) {
 		include 'utils/validator.class.php';
 		$validations = array (
@@ -19,21 +19,21 @@
 			'salis' => 'alfanum',
 			'prizinis_fondas'=>'positivenumber',
 			'pradzia'=>'date',
-			'pabaiga'=>'date'
+			'pabaiga'=>'date',
+			'organizatorius'=>'alfanum'
 		);
 		$validator = new validator($validations, $required);
 		
-		if($validator->validate($$_POST)){
+		if($validator->validate($_POST)){
 			$data = $validator->preparePostFieldsForSQL();
-			print_r($data);
+			//print_r($data);
 			if(isset($data['id']) && $data['id']>0){
 				$modelsObj->updateTurnyras($data);
 			} else{
 				$latestId = $modelsObj->getMaxIdOfTurnyras();
 				$data['id'] = $latestId+1;
 				$modelsObj->insertTurnyras($data);
-			}
-			header("Location: index.php?module={$module}");
+			}                
 			die();
 		}else {
 			// gauname klaidu pranešima
@@ -48,11 +48,6 @@
 		}
 	}
 ?>
-<ul id="pagePath">
-	<li><a href="index.php">Pradžia</a></li>
-	<li><a href="index.php?module=<?php echo $module; ?>">Turnyrai</a></li>
-	<li><?php if(!empty($id)) echo "Turnyro redagavimas"; else echo "Naujas turnyras"; ?></li>
-</ul>
 <div class="float-clear"></div>
 <div id="formContainer">
 	<?php if($formErrors != null) { ?>
@@ -94,12 +89,12 @@
 			</p>
 			<p>	
 				<label class="field" for="salis">Šalis<?php echo in_array('salis', $required) ? '<span> *</span>' : ''; ?></label>
-				<input type="text" id="titulu_sk" name="titulu_sk" class="textbox-150" value="<?php echo isset($fields['titulu_sk']) ? $fields['titulu_sk'] : ''; ?>">
+				<input type="text" id="salis" name="salis" class="textbox-150" value="<?php echo isset($fields['salis']) ? $fields['salis'] : ''; ?>">
 						
 			</p>
 			<p>	
 				<label class="field" for="prizinis_fondas">Prizinis Fondas<?php echo in_array('prizinis_fondas', $required) ? '<span> *</span>' : ''; ?></label>
-				<input type="text" id="prizinis_fondas" name="prizinis_fondas" class="textbox-150" value="<?php echo isset($fields['prizinis_fondas']) ? $fields['atsiradimo_data'] : ''; ?>">
+				<input type="text" id="prizinis_fondas" name="prizinis_fondas" class="textbox-150" value="<?php echo isset($fields['prizinis_fondas']) ? $fields['prizinis_fondas'] : ''; ?>">
 				
 			</p>
 			<p>	
@@ -117,6 +112,7 @@
 				<input type="hidden" id="busena" name="busena" class="textbox-150" value="<?php echo isset($fields['busena']) ? $fields['busena'] : ''; ?>">
 						
 			</p>
+			
 			<p>
 				<label class="field" for="organizatorius">Organizatorius<?php echo in_array('organizatorius', $required) ? '<span> *</span>' : ''; ?></label>
 				<select id="organizatorius" name="organizatorius">
