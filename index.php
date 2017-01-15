@@ -79,8 +79,11 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-                        <li><a href="#">Link</a></li>
+                        <li><a href="index.php?module=home" title="Home" <?php if ($module == 'home'){echo 'class="active"';}?>>Home</a></li>
+                        <li><a href="index.php?module=game" title="Games" <?php if ($module == 'game'){echo 'class="active"';}?>>Games</a></li>
+                        <li><a href="index.php?module=team" title="Teams" <?php if ($module == 'team'){echo 'class="active"';}?>>Teams</a></li>
+                        <li><a href="index.php?module=tournament" title="Tournaments" <?php if ($module == 'tournament'){echo 'class="active"';}?>>Tournaments</a></li>
+                        <li><a href="index.php?module=report" title="Reports" <?php if ($module == 'game'){echo 'class="active"';}?>>Reports</a></li>
                     </ul>
                     <form class="navbar-form navbar-right">
                         <div class="form-group">
@@ -123,9 +126,9 @@
                 <?php
                 if(!empty($module)) {
                     if(empty($id) && empty($action)) {
-                        include "controls/{$module}_list.php";
+                        include "controller/{$module}_list.php";
                     } else {
-                        include "controls/{$module}_edit.php";
+                        include "controller/{$module}_edit.php";
                     }
                 }
                 ?>
