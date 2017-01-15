@@ -1,4 +1,5 @@
 <?php
+
 	include 'views/turnyras.class.php';
 	$modelsObj = new turnyras();
 	
@@ -6,21 +7,10 @@
 	$paging = new paging(NUMBER_OF_ROWS_IN_PAGE);
 	
 	if(!empty($removeId)){
-		$count = 0;
-		$removeErrorParameter = '';
-		if($count == 0 && $removeId > 10){
-			$modelsObj->deleteTurnyras($removeId);
-		} else {
-			$removeErrorParameter = '$remove_error=1';
-		}
-		header("Location: index.php?module={$module}{$removeErrorParameter}");
+		$modelsObj->deleteTurnyras($removeId);
 		die;
 	}
 ?>
-<ul id="pagePath">
-	<li><a href="index.php">Pradžia</a></li>
-	<li>Turnyrai</li>
-</ul>
 <div id="actions">
 	<a href='index.php?module=<?php echo $module; ?>&action=new'>Naujas turnyras</a>
 </div>
@@ -31,8 +21,9 @@
 		Turnyras nebuvo pašalintas.
 	</div>
 <?php } ?>
-
-<table>
+<div class="table-responsive">
+    <table class="table">
+	<thead>
 	<tr>
 		<th>Pavadinimas</th>
 		<th>Žaidimas</th>
@@ -41,6 +32,8 @@
 		<th>Pabaiga</th>
 	<th></th>
 	</tr>
+	</thead>
+        <tbody>
 	<?php
 		$elementCount = $modelsObj->getTurnyrasListCount();
 		$paging->process($elementCount, $pageId);
@@ -61,7 +54,11 @@
 				. "</tr>";
 		}
 		?>
-</table>
+</tbody>
+
+
+    </table>
+</div>
 <?php
 	include 'controller/paging.php';
 ?>
