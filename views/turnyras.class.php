@@ -20,7 +20,8 @@ class turnyras {
 		if(isset($offset)) {
 			$limitOffsetString .= " OFFSET {$offset}";
 		}
-		$query = " SELECT `turnyras`.`pavadinimas`,
+		$query = " SELECT `turnyras`.`id`,
+						  `turnyras`.`pavadinimas`,
 						  `zaidimas`.`pavadinimas` AS `game`,
 						  `turnyras`.`miestas`,
 						  `turnyras`.`salis`,
@@ -66,7 +67,7 @@ class turnyras {
 									'{$data['prizinis_fondas']}',
 									'{$data['pradzia']}',
 									'{$data['pabaiga']}',
-									'{$data['busena']}',
+									'1',
 									'{$data['organizatorius']}'								
 								)";
 		mysql::query($query);
@@ -81,18 +82,18 @@ class turnyras {
 							`prizinis_fondas`='{$data['prizinis_fondas']}',
 							`pradzia`='{$data['pradzia']}',
 							`pabaiga`='{$data['pabaiga']}',
-							`busena`='{$data['busena']}',
+							`busena`='1',
 							`organizatorius`='{$data['organizatorius']}'
-				 WHERE `id`='{$data['id']}";
+				 WHERE `id`='{$data['id']}'";
 		mysql::query($query);
 	}
 	public function deleteTurnyras($id){
 		$query = " DELETE FROM `turnyras`
 				   WHERE `id`='{$id}'";
 		mysql::query($query);
-		$query = "DELETE FROM `dalyvis`
-				  WHERE `turnyro_id` ='{$id}'";
-		mysql::query($query);
+		//$query = "DELETE FROM `dalyvis`
+			//	  WHERE `turnyro_id` ='{$id}'";
+		//mysql::query($query);
 	}
 	public function getMaxIdOfTurnyras() {
 		$query = "  SELECT MAX(`id`) AS `latestId`
