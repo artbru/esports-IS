@@ -20,12 +20,13 @@ class org {
 		if(isset($offset)) {
 			$limitOffsetString .= " OFFSET {$offset}";
 		}
-		$query = " SELECT `organizatorius`.`vardas`,
+		$query = " SELECT `organizatorius`.`login`,
+						  `organizatorius`.`vardas`,
 						  `organizatorius`.`pavarde`,
 						  `organizatorius`.`gimimo_data`,
 						  `organizatorius`.`email`,
 						  `organizatorius`.`tel_nr`
-				   FROM `organizatorius` LIMIT {$limit} OFFSET {$offset}";					
+				   FROM `organizatorius`";					
 		$data = mysql::select($query);
 		return $data;
 	}
