@@ -76,7 +76,6 @@
 				<select id="sporto_saka" name="sporto_saka">
 					<option value="">---------------</option>
 					<?php
-						// išrenkame klientus
 						$data = $gamesObj->getZaidimasList();
 						foreach($data as $key => $val) {
 							$selected = "";
@@ -123,7 +122,6 @@
 				<select id="organizatorius" name="organizatorius">
 					<option value="">---------------</option>
 					<?php
-						// išrenkame klientus
 						$data = $orgObj->getOrgList();
 						foreach($data as $key => $val) {
 							$selected = "";
