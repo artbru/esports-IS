@@ -11,7 +11,7 @@
 		$module = mysql::escape($_GET['module']);
 	}
 	
-	// jeigu pasirinktas elementas (sutartis, automobilis ir kt.), nustatome elemento id
+	// jeigu pasirinktas elementas, nustatome elemento id
 	$id = '';
 	if(isset($_GET['id'])) {
 		$id = mysql::escape($_GET['id']);
@@ -44,7 +44,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta name="robots" content="noindex">
-		<title>Sporto Organizacijų IS</title>
+		<title>eSports IS</title>
 		<link rel="stylesheet" type="text/css" href="scripts/datetimepicker/jquery.datetimepicker.css" media="screen" />
         <script type="text/javascript" src="scripts/jquery-1.12.0.min.js"></script>
 		<script type="text/javascript" src="scripts/datetimepicker/jquery.datetimepicker.full.min.js"></script>
