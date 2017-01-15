@@ -48,7 +48,7 @@
 					. "<td>{$val['pradzia']}</td>"
 					. "<td>{$val['pabaiga']}</td>"
 					. "<td>"
-						. "<a href='#' onclick='showConfirmDialog(\"{$module}\", \"{$val['id']}\"); return false;' title=''>salinti</a>&nbsp;"
+						. "<a href='#' onclick='showConfirmDialog(\"{$module}\", \"{$val['id']}\"); return false;' title=''>šalinti</a>&nbsp;"
 						. "<a href='index.php?module={$module}&id={$val['id']}' title=''>redaguoti</a>"
 					. "</td>"
 				. "</tr>";
