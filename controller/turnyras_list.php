@@ -40,9 +40,10 @@
 		$data = $modelsObj->getTurnyrasList($paging->size, $paging->first);
 		
 		foreach($data as $key => $val){
+			$url ="index.php?module=dalyviai&id=".$val['id'];
 			echo
 				"<tr>"
-					. "<td>{$val['pavadinimas']}</td>"
+					. "<td><a href=\"".$url."\".{$val['pavadinimas']}</a>{$val['pavadinimas']}</td>"
 					. "<td>{$val['game']}</td>"
 					. "<td>{$val['salis']}</td>"
 					. "<td>{$val['pradzia']}</td>"
