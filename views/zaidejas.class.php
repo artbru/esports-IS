@@ -6,7 +6,7 @@
  * Date: 2017-01-15
  * Time: 17:04
  */
-class player
+class zaidejas
 {
 
     /**

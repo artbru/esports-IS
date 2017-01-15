@@ -6,7 +6,7 @@
  * Date: 2017-01-15
  * Time: 16:07
  */
-class team
+class komanda
 {
     public function __construct()
     {
@@ -40,6 +40,14 @@ class team
         $data = mysql::select($query);
 
         return $data;
+    }
+
+    public function getTeamListCount() {
+        $query = "  SELECT COUNT(`id`) as `kiekis`
+                    FROM `komanda`";
+        $data = mysql::select($query);
+
+        return $data[0]['kiekis'];
     }
 
     public function deleteTeam($id){
