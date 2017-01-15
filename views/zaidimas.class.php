@@ -12,20 +12,21 @@ class zaidimas {
 		print_r($data);
 		return $data[0];
 	}
-	public function getZadimasList($limit = null, $offset = null){
-		$limitOffsetString = "";
+	public function getZaidimasList($limit = null, $offset = null){
+		 $limitOffsetString = "";
 		if(isset($limit)) {
 			$limitOffsetString .= " LIMIT {$limit}";
 		}
 		if(isset($offset)) {
 			$limitOffsetString .= " OFFSET {$offset}";
-		}
-		$query = " SELECT `zaidimas`.`pavadinimas`,
-						  `zaidimas`.`zanras`
+		} 
+		$query = " SELECT `zaidimas`.`id`,
+						  `zaidimas`.`pavadinimas`,
+						  `zaidimas`.`zanras`,
 						  `zaidimas`.`isleidimo_metai`,
 						  `zaidimas`.`leidejas`,
 						  `zaidimas`.`platforma`
-				   FROM `turnyras` LIMIT {$limit} OFFSET {$offset}";					
+				   FROM `zaidimas`";					
 		$data = mysql::select($query);
 		return $data;
 	}
