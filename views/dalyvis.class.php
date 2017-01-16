@@ -12,7 +12,7 @@ class dalyvis {
 		print_r($data);
 		return $data[0];
 	}
-	public function getDalyvisList($limit = null, $offset = null){
+	public function getDalyvisList($id, $limit = null, $offset = null){
 		$limitOffsetString = "";
 		if(isset($limit)) {
 			$limitOffsetString .= " LIMIT {$limit}";
@@ -20,34 +20,22 @@ class dalyvis {
 		if(isset($offset)) {
 			$limitOffsetString .= " OFFSET {$offset}";
 		}
-		$query = " SELECT `turnyras`.`pavadinimas`, AS `tournament`,
-						  `komanda`.`pavadinimas` AS `komanda1`,
-						  `komanda`.`pavadinimas` AS `komanda2`,
-						  `komanda`.`pavadinimas` AS `komanda3`,
-						  `komanda`.`pavadinimas` AS `komanda4`,
-						  `komanda`.`pavadinimas` AS `komanda5`,
-						  `komanda`.`pavadinimas` AS `komanda6`,
-						  `komanda`.`pavadinimas` AS `komanda7`,
-						  `komanda`.`pavadinimas` AS `komanda8`,
+		$query = " SELECT `dalyvis`.`turnyro_id`,
+						  `turnyras`.`pavadinimas` AS `tournament`,
+						  `komanda`.`pavadinimas` AS `kom1`,
+						  `komanda`.`pavadinimas` AS `kom2`,
+						  `komanda`.`pavadinimas` AS `kom3`,
+						  `komanda`.`pavadinimas` AS `kom4`,
+						  `komanda`.`pavadinimas` AS `kom5`,
+						  `komanda`.`pavadinimas` AS `kom6`,
+						  `komanda`.`pavadinimas` AS `kom7`,
+						  `komanda`.`pavadinimas` AS `kom8`
 				   FROM `dalyvis`
 						LEFT JOIN `turnyras`
 							ON `dalyvis`.`turnyro_id` = `turnyras`.`id` 
 						LEFT JOIN `komanda`
-							ON `dalyvis`.`komanda1` = `komanda`.`pavadinimas`
-						LEFT JOIN `komanda`
-							ON `dalyvis`.`komanda2` = `komanda`.`pavadinimas`
-						LEFT JOIN `komanda`
-							ON `dalyvis`.`komanda3` = `komanda`.`pavadinimas`
-						LEFT JOIN `komanda`
-							ON `dalyvis`.`komanda4` = `komanda`.`pavadinimas`
-						LEFT JOIN `komanda`
-							ON `dalyvis`.`komanda5` = `komanda`.`pavadinimas`
-						LEFT JOIN `komanda`
-							ON `dalyvis`.`komanda6` = `komanda`.`pavadinimas`
-						LEFT JOIN `komanda`
-							ON `dalyvis`.`komanda7` = `komanda`.`pavadinimas`
-						LEFT JOIN `komanda`
-							ON `dalyvis`.`komanda8` = `komanda`.`pavadinimas` LIMIT {$limit} OFFSET {$offset}";					
+							ON `dalyvis`.`komanda1` = `komanda`.`id`
+					WHERE `turnyro_id`='{$id}'";					
 		$data = mysql::select($query);
 		return $data;
 	}
@@ -97,6 +85,12 @@ class dalyvis {
 							`komanda7`='{$data['komanda7']}',
 							`komanda8`='{$data['komanda8']}'
 				 WHERE `turnyro_id`='{$data['turnyro_id']}";
+		mysql::query($query);
+	}
+	public function deleteDalyvis($id)
+	{
+		$query = "DELETE FROM `dalyvis`
+				  WHERE `turnyro_id` ='{$id}'";
 		mysql::query($query);
 	}
 }
