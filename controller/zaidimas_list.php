@@ -26,7 +26,7 @@
             foreach ($data as $key => $val){
                 echo
                     "<tr>"
-                    . "<td><a href=''>{$val['pavadinimas']}</a></td>"
+                    . "<td>{$val['pavadinimas']}</td>"
                     . "<td>{$val['zanras']}</td>"
                     . "<td>{$val['isleidimo_metai']}</td>"
                     . "<td>{$val['leidejas']}</td>"
