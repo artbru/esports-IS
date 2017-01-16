@@ -8,7 +8,8 @@
 
     include 'views/komanda.class.php';
     $contractsObj = new komanda();
-
+    include 'views/zaidimas.class.php';
+    $gamesObj = new zaidimas();
     $formErrors = null;
     $fields = array();
 
@@ -59,7 +60,19 @@
     </div>
     <div class="form-group">
         <label for="zaidimas">Žaidimas</label>
-        <input type="text" class="form-control" id="zaidimas" name="zaidimas">
+        <select class="form-control" id="zaidimas" name="zaidimas">
+            <option value="">---------------</option>
+            <?php
+            $data = $gamesObj->getZaidimasList();
+            foreach($data as $key => $val) {
+                $selected = "";
+                if(isset($fields['zaidimas']) && $fields['zaidimas'] == $val['id']) {
+                    $selected = " selected='selected'";
+                }
+                echo "<option{$selected} value='{$val['id']}'>{$val['pavadinimas']}</option>";
+            }
+            ?>
+        </select>
     </div>
     <div class="form-group">
         <label for="reitingas_regione">Reitingas regione</label>
