@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 2017 m. Sau 14 d. 11:03
+-- Generation Time: 2017 m. Sau 16 d. 15:32
 -- Server version: 10.1.10-MariaDB
 -- PHP Version: 7.0.4
 
@@ -38,6 +38,13 @@ CREATE TABLE `dalyvis` (
   `komanda8` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Sukurta duomenų kopija lentelei `dalyvis`
+--
+
+INSERT INTO `dalyvis` (`turnyro_id`, `komanda1`, `komanda2`, `komanda3`, `komanda4`, `komanda5`, `komanda6`, `komanda7`, `komanda8`) VALUES
+(7, 4, 2, 3, 2, 1, 4, 1, 2);
+
 -- --------------------------------------------------------
 
 --
@@ -69,6 +76,24 @@ CREATE TABLE `komanda` (
   `nariu_sk` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Sukurta duomenų kopija lentelei `komanda`
+--
+
+INSERT INTO `komanda` (`id`, `pavadinimas`, `regionas`, `zaidimas`, `reitingas_regione`, `reitingas_pasaulyje`, `svetaine`, `nariu_sk`) VALUES
+(0, 'asdasd', 'as', 1, 2, 2, 'xd', 5),
+(1, 'komanda1', 'eu', 1, 1, 1, 'www.www.com', 5),
+(2, 'komanda2', 'eu', 1, 1, 1, 'www.www.com', 5),
+(3, 'komandaaa', 'eu', 2, 1, 1, 'www.www.com', 5),
+(4, 'komandadas', 'eu', 1, 1, 1, 'www.www.com', 5),
+(5, '', '', 0, 0, 0, '', 0),
+(6, '', '', 0, 0, 0, '', 0),
+(7, '', '', 0, 0, 0, '', 0),
+(8, 'asd', '', 0, 0, 0, '', 0),
+(9, 'asd', '', 0, 0, 0, '', 0),
+(10, 'a', 'asd', 0, 0, 0, '', 0),
+(11, 'test', 'test', 1, 1, 1, 'https://www.facebook.com/', 5);
+
 -- --------------------------------------------------------
 
 --
@@ -98,6 +123,13 @@ CREATE TABLE `organizatorius` (
   `pass` varchar(16) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Sukurta duomenų kopija lentelei `organizatorius`
+--
+
+INSERT INTO `organizatorius` (`login`, `vardas`, `pavarde`, `gimimo_data`, `email`, `tel_nr`, `pass`) VALUES
+('login', 'aaaa', 'bbbb', '1995-01-10', 'asd@asd.com', '868686355', 'xdlol');
+
 -- --------------------------------------------------------
 
 --
@@ -107,7 +139,7 @@ CREATE TABLE `organizatorius` (
 CREATE TABLE `turnyras` (
   `id` int(11) NOT NULL,
   `pavadinimas` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
-  `sporto_saka` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
+  `sporto_saka` int(11) NOT NULL,
   `miestas` varchar(16) COLLATE utf8_unicode_ci NOT NULL,
   `salis` varchar(16) COLLATE utf8_unicode_ci NOT NULL,
   `prizinis_fondas` int(11) NOT NULL,
@@ -116,6 +148,16 @@ CREATE TABLE `turnyras` (
   `busena` varchar(16) COLLATE utf8_unicode_ci NOT NULL,
   `organizatorius` varchar(16) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Sukurta duomenų kopija lentelei `turnyras`
+--
+
+INSERT INTO `turnyras` (`id`, `pavadinimas`, `sporto_saka`, `miestas`, `salis`, `prizinis_fondas`, `pradzia`, `pabaiga`, `busena`, `organizatorius`) VALUES
+(2, 'TurnyrasA', 2, 'MiestasA', 'SalisA', 1552, '2016-09-19', '2019-10-20', '1', 'login'),
+(3, 'TurnyrasB', 1, 'MiestasB', 'SalisB', 123000, '2015-06-06', '2016-06-06', '1', 'login'),
+(4, 'TurnyrasC', 2, 'MiestasC', 'MiestasC', 100000, '2016-09-19', '2019-10-20', '1', 'login'),
+(7, 'Turnyras D', 2, 'MiestasD', 'Salis D', 50000, '2016-09-19', '2019-10-20', 'asd', 'login');
 
 -- --------------------------------------------------------
 
@@ -158,6 +200,14 @@ CREATE TABLE `zaidimas` (
   `leidejas` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
   `platforma` varchar(16) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Sukurta duomenų kopija lentelei `zaidimas`
+--
+
+INSERT INTO `zaidimas` (`id`, `pavadinimas`, `zanras`, `isleidimo_metai`, `leidejas`, `platforma`) VALUES
+(1, 'Žaidimas1', 'Žanras1', 2015, 'Leidėjas1', 'PC'),
+(2, 'Žaidimas2', 'Žanras2', 2015, 'Leidėjas2', 'PS3');
 
 --
 -- Indexes for dumped tables
