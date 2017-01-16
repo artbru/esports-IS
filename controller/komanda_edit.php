@@ -51,31 +51,31 @@
 <form method="post" action="">
     <div class="form-group">
         <label for="pavadinimas">Pavadinimas</label>
-        <input type="text" class="form-control" id="pavadinimas">
+        <input type="text" class="form-control" id="pavadinimas" name="pavadinimas">
     </div>
     <div class="form-group">
         <label for="regionas">Regionas</label>
-        <input type="text" class="form-control" id="regionas">
+        <input type="text" class="form-control" id="regionas" name="regionas">
     </div>
     <div class="form-group">
         <label for="zaidimas">Žaidimas</label>
-        <input type="text" class="form-control" id="zaidimas">
+        <input type="text" class="form-control" id="zaidimas" name="zaidimas">
     </div>
     <div class="form-group">
         <label for="reitingas_regione">Reitingas regione</label>
-        <input type="number" class="form-control" id="reitingas_regione">
+        <input type="number" class="form-control" id="reitingas_regione" name="reitingas_regione">
     </div>
     <div class="form-group">
         <label for="reitingas_pasaulyje">Reitingas pasaulyje</label>
-        <input type="number" class="form-control" id="reitingas_pasaulyje">
+        <input type="number" class="form-control" id="reitingas_pasaulyje" name="reitingas_pasaulyje">
     </div>
     <div class="form-group">
         <label for="svetaine">Svetainė</label>
-        <input type="url" class="form-control" id="svetaine">
+        <input type="url" class="form-control" id="svetaine"name="svetaine">
     </div>
     <div class="form-group">
         <label for="nariu_sk">Narių skaičius</label>
-        <input type="number" class="form-control" id="nariu_sk">
+        <input type="number" class="form-control" id="nariu_sk" name="nariu_sk">
     </div>
     <p>
         <input type="submit" class="submit" name="submit" value="Issaugoti">
