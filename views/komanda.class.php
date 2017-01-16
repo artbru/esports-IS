@@ -36,7 +36,7 @@ class komanda
             $limitOffsetString .= "OFFSET {$offset}";
         }
 
-        $query = "SELECT * FROM `komanda`" . $limitOffsetString;
+        $query = "SELECT * FROM `komanda`";
         $data = mysql::select($query);
 
         return $data;
