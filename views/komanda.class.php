@@ -72,6 +72,7 @@ class komanda
     public function insertTeam($data){
         $query = "INSERT INTO `komanda`
                                 (
+                                    `id`,
                                     `pavadinimas`,
                                     `regionas`,
                                     `zaidimas`,
@@ -81,6 +82,7 @@ class komanda
                                     `nariu_sk`
                                 ) 
                                 VALUES (
+                                    '{$data['id']}',
                                     '{$data['pavadinimas']}',
                                     '{$data['regionas']}',
                                     '{$data['zaidimas']}',
@@ -91,5 +93,13 @@ class komanda
                                 )";
 
         mysql::query($query);
+    }
+
+    public function getMaxIdOfTeam() {
+        $query = "  SELECT MAX(`id`) AS `latestId`
+					FROM `komanda`";
+        $data = mysql::select($query);
+
+        return $data[0]['latestId'];
     }
 }

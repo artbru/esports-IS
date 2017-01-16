@@ -13,6 +13,11 @@
     $paging = new paging(NUMBER_OF_ROWS_IN_PAGE);
 
 ?>
+<div id="actions">
+    <a href='index.php?module=<?php echo $module; ?>&action=new'>Nauja komanda</a>
+</div>
+    <div class="float-clear"></div>
+
 <div class="table-responsive">
     <table class="table">
         <thead>
