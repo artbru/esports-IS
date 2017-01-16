@@ -6,8 +6,12 @@
 	include 'utils/paging.class.php';
 	$paging = new paging(NUMBER_OF_ROWS_IN_PAGE);
 	
+	include 'views/dalyvis.class.php';
+	$modelObj = new dalyvis();
+
 	if(!empty($removeId)){
 		$modelsObj->deleteTurnyras($removeId);
+		$modelObj->deleteDalyvis($removeId);
 		die;
 	}
 ?>
