@@ -3,8 +3,8 @@ style='font-size:26.0pt;line-height:107%'>eSports</span></p>
 
 <p class=MsoNormal style='text-align:justify;text-indent:.25in'>&nbsp;</p>
 
-<p class=MsoNormal style='text-align:justify;text-indent:.25in'>Komand&#371;
-valdymo posistem&#279;. Posistem&#279; skirta registruoti, redaguoti ir šalinti
+<p class=MsoNormal style='text-align:justify;text-indent:.25in'><strong>Komand&#371;
+valdymo posistem&#279;.</strong> Posistem&#279; skirta registruoti, redaguoti ir šalinti
 komandas. Taip pat posistem&#279;je vykdoma komandai priklausan&#269;i&#371;
 nari&#371; registracija, j&#371; informacijos redagavimas, nari&#371;
 pašalinimas iš komandos. Registruojant nauj&#261; komand&#261; nurodomas jos
@@ -16,8 +16,8 @@ Registruojan žaid&#279;j&#261; atstovaujant&#303; komandai yra nurodomas jo
 vardas, pavard&#279;, naudojamas vardas žaidime, žaid&#279;jo gimimo data bei
 tautyb&#279;. </p>
 
-<p class=MsoNormal style='text-align:justify;text-indent:.25in'><span lang=LT>Turnyr&#371;
-administravimo posistem&#279;. Posistem&#279; skirta registruoti, redaguoti ir
+<p class=MsoNormal style='text-align:justify;text-indent:.25in'><span lang=LT><strong>Turnyr&#371;
+administravimo posistem&#279;.</strong> Posistem&#279; skirta registruoti, redaguoti ir
 šalinti turnyrus. Turnyrus gali administruoti Organizatoriai. Kiekvienas
 turnyras turi unikal&#371; identifikacijos kod&#261;, pavadinim&#261;, žaidimo
 pavadinim&#261;, prizin&#303; fond&#261;, pražios ir pabaigos dat&#261;,
